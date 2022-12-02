@@ -278,8 +278,10 @@ class ImageFolder(DatasetFolder):
             is_valid_file: Optional[Callable[[str], bool]] = None,
             index_file: Optional[str] = None, 
     ):
+        print("the root folder: ",root)
         super(ImageFolder, self).__init__(root, loader, IMG_EXTENSIONS if is_valid_file is None else None,
                                           transform=transform,
                                           target_transform=target_transform,
                                           is_valid_file=is_valid_file, index_file=index_file)
         self.imgs = self.samples
+
